@@ -2,6 +2,7 @@
 import React from 'react';
 import './CalculatorBtns.css';
 import '../../App.css';
+import PropTypes from 'prop-types';
 
 export default class CalculatorBtns extends React.Component {
   render() {
@@ -56,3 +57,5 @@ export default class CalculatorBtns extends React.Component {
     );
   }
 }
+
+CalculatorBtns.propTypes = { handleBtnClick: PropTypes.func.isRequired };
