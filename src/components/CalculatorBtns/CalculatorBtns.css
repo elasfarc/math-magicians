@@ -35,11 +35,13 @@
   border-left: 0.25px solid black;
   font-weight: bold;
 }
+
 .operation-btn:last-child {
   border-bottom: none;
   border-right: none;
   border-radius: 0 0 20px 0;
 }
+
 .operation-btn:hover {
   background-color: rgba(255, 158, 48, 0.83);
   border-bottom: 0.5px solid black;
