@@ -37,3 +37,31 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.625rem;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-row-r {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}

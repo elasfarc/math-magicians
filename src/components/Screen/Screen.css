@@ -1,0 +1,9 @@
+.screen {
+  height: 10rem;
+  font-size: 4rem;
+  text-align: right;
+  padding: 3rem 3rem 0 0;
+  color: white;
+  background-color: rgba(74, 74, 74, 1);
+  border-radius: 20px 20px 0 0;
+}
