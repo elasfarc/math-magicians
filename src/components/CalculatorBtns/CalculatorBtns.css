@@ -1,0 +1,38 @@
+.btn {
+  width: 10rem;
+  height: 10rem;
+  background: inherit;
+  border: 0.25px solid #c1c5be8a;
+}
+
+.btn:hover {
+  background: #c1c5be46;
+  border: none;
+}
+
+.btn:active {
+  background-color: #c1c5be23;
+}
+
+.period {
+  position: absolute;
+  left: 20rem;
+  top: 40rem;
+}
+
+.zero {
+  flex-basis: 20rem;
+  margin-right: auto;
+}
+
+.operation-btn {
+  background-color: rgb(255, 158, 48);
+  border-bottom: 0.25px solid black;
+  border-left: 0.25px solid black;
+}
+
+.operation-btn:hover {
+  background-color: rgba(255, 158, 48, 0.83);
+  border-bottom: 0.5px solid black;
+  border-left: 0.5px solid black;
+}
