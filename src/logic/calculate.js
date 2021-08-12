@@ -26,6 +26,7 @@ export default function calculate(obj, buttonName) {
     if (buttonName === '0' && obj.next === '0') {
       return {};
     }
+
     // If there is an operation, update next
     if (obj.operation) {
       if (obj.next) {
@@ -40,6 +41,7 @@ export default function calculate(obj, buttonName) {
         total: null,
       };
     }
+
     return {
       next: buttonName,
       total: null,
@@ -77,7 +79,7 @@ export default function calculate(obj, buttonName) {
     return {};
   }
 
-  if (buttonName === '+/-') {
+  if (buttonName === '±') {
     if (obj.next) {
       return { next: (-1 * parseFloat(obj.next)).toString() };
     }
