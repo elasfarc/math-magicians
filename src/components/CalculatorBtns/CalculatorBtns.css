@@ -1,6 +1,6 @@
 .btn {
   width: 10rem;
-  height: 10rem;
+  height: 8rem;
   background: inherit;
   border: 0.25px solid #c1c5be8a;
 }
@@ -17,7 +17,7 @@
 .period {
   position: absolute;
   left: 20rem;
-  top: 40rem;
+  top: 42rem;
 }
 
 .zero {
