@@ -1,6 +1,6 @@
 
 # Math Magicians
-a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to: Make simple calculations. Read a random math-related quote.
+A website for all fans of mathematics. It is a Single Page App (SPA) that allows users to: Make simple calculations. Read a random math-related quote.
 
 ![calcul](./ss.png)
 
@@ -44,7 +44,7 @@ npm run build
 
 ## Authors
 
-👤 NGANULO RUSHANIKA Moise
+👤 Mohammed Al-Asfar
 
 - GitHub: [@githubhandle](https://github.com/elasfarc)
 
