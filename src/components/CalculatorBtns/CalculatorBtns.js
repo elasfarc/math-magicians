@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import './CalculatorBtns.css';
 import '../../App.css';
@@ -14,6 +15,8 @@ export default class CalculatorBtns extends React.Component {
           <div>
             {functionalBtns.map((fnBtn) => (
               <button
+                key={fnBtn}
+                type="button"
                 className={`btn functional-btn ${
                   fnBtn === '.' ? 'period' : null
                 }`}
@@ -25,6 +28,8 @@ export default class CalculatorBtns extends React.Component {
           <div className="flex-row-r wrap">
             {numbers.map((number) => (
               <button
+                key={number}
+                type="button"
                 className={`btn number-btn ${number === 0 ? 'zero' : null}`}
               >
                 {number}
@@ -34,7 +39,13 @@ export default class CalculatorBtns extends React.Component {
         </div>
         <div className="flex-col">
           {operationsBtns.map((operationBtn) => (
-            <button className="btn operation-btn">{operationBtn}</button>
+            <button
+              key={operationBtn}
+              type="button"
+              className="btn operation-btn"
+            >
+              {operationBtn}
+            </button>
           ))}
         </div>
       </div>
