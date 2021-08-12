@@ -36,7 +36,6 @@ export default class Calculator extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="calculator">
         <Screen value={this.display()} />

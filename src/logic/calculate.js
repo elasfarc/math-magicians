@@ -67,7 +67,7 @@ export default function calculate(obj, buttonName) {
         next: '.',
       };
     }
-    return { total: '0.' };
+    return { next: '0.' };
   }
 
   if (buttonName === '=') {
