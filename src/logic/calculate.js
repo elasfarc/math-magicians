@@ -62,7 +62,10 @@ export default function calculate(obj, buttonName) {
       if (obj.total.includes('.')) {
         return {};
       }
-      return { total: `${obj.total}.` };
+      return {
+        total: null,
+        next: '.',
+      };
     }
     return { total: '0.' };
   }

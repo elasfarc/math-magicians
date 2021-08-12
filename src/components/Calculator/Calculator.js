@@ -1,7 +1,6 @@
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import './Calculator.css';
-// import { CalculatorBtns } from '../CalculatorBtns/CalculatorBtns';
 import CalculatorBtns from '../CalculatorBtns/CalculatorBtns';
 import Screen from '../Screen/Screen';
 import calculate from '../../logic/calculate';
@@ -37,6 +36,7 @@ export default class Calculator extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="calculator">
         <Screen value={this.display()} />
