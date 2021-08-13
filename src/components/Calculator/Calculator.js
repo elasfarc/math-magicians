@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Calculator.css';
 import CalculatorBtns from '../CalculatorBtns/CalculatorBtns';
 import Screen from '../Screen/Screen';
@@ -8,25 +8,42 @@ const Calculator = () => {
   const [total, useTotal] = useState(null);
   const [next, useNext] = useState(null);
   const [operation, useOperation] = useState(null);
+  const [error, useError] = useState(null);
+
+  useEffect(() => {
+    useTotal(null);
+    useNext(null);
+    useOperation(null);
+  }, [error]);
 
   const handleBtnClick = (buttonName) => {
-    const calculatorData = calculate({ total, next, operation }, buttonName);
-
-    Object.entries(calculatorData).forEach(([key, value]) => {
-      switch (key) {
-        case 'total':
-          useTotal(value);
-          break;
-        case 'next':
-          useNext(value);
-          break;
-        default:
-          useOperation(value);
-      }
-    });
+    if (error) useError(null);
+    try {
+      const calculatorData = calculate(
+        {
+          total, next, operation, error,
+        },
+        buttonName,
+      );
+      Object.entries(calculatorData).forEach(([key, value]) => {
+        switch (key) {
+          case 'total':
+            useTotal(value);
+            break;
+          case 'next':
+            useNext(value);
+            break;
+          default:
+            useOperation(value);
+        }
+      });
+    } catch (e) {
+      useError(e);
+    }
   };
 
   const display = () => {
+    if (error) return error.message;
     if (total) {
       if (next) return next;
       return total;
@@ -39,7 +56,7 @@ const Calculator = () => {
   };
   return (
     <div className="calculator">
-      <Screen value={display()} />
+      <Screen value={display()} isError={!!error} />
       <CalculatorBtns handleBtnClick={handleBtnClick} />
     </div>
   );
