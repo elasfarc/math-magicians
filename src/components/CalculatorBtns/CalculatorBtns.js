@@ -2,10 +2,12 @@
 import React from 'react';
 import './CalculatorBtns.css';
 import '../../App.css';
+import PropTypes from 'prop-types';
 
 export default class CalculatorBtns extends React.Component {
   render() {
-    const numbers = [...Array(10).keys()].reverse();
+    const { handleBtnClick } = this.props;
+    const numbers = [...Array(10).keys()].reverse().map((n) => n.toString());
     // const numbers = [9, 8, 7, 6, 5, 4, 3, 2, 1, ".", 0];
     const functionalBtns = ['AC', '±', '%', '.'];
     const operationsBtns = ['÷', '×', '−', '+', '='];
@@ -16,6 +18,7 @@ export default class CalculatorBtns extends React.Component {
             {functionalBtns.map((fnBtn) => (
               <button
                 key={fnBtn}
+                onClick={() => handleBtnClick(fnBtn)}
                 type="button"
                 className={`btn functional-btn ${
                   fnBtn === '.' ? 'period' : null
@@ -29,8 +32,9 @@ export default class CalculatorBtns extends React.Component {
             {numbers.map((number) => (
               <button
                 key={number}
+                onClick={() => handleBtnClick(number)}
                 type="button"
-                className={`btn number-btn ${number === 0 ? 'zero' : null}`}
+                className={`btn number-btn ${number === '0' ? 'zero' : null}`}
               >
                 {number}
               </button>
@@ -41,6 +45,7 @@ export default class CalculatorBtns extends React.Component {
           {operationsBtns.map((operationBtn) => (
             <button
               key={operationBtn}
+              onClick={() => handleBtnClick(operationBtn)}
               type="button"
               className="btn operation-btn"
             >
@@ -52,3 +57,5 @@ export default class CalculatorBtns extends React.Component {
     );
   }
 }
+
+CalculatorBtns.propTypes = { handleBtnClick: PropTypes.func.isRequired };

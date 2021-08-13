@@ -10,4 +10,4 @@ export default class Screen extends React.Component {
   }
 }
 
-Screen.propTypes = { value: PropTypes.number.isRequired };
+Screen.propTypes = { value: PropTypes.string.isRequired };
