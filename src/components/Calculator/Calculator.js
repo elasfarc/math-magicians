@@ -1,29 +1,49 @@
-/* eslint-disable react/no-unused-state */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Calculator.css';
 import CalculatorBtns from '../CalculatorBtns/CalculatorBtns';
 import Screen from '../Screen/Screen';
 import calculate from '../../logic/calculate';
 
-export default class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.handleBtnClick = this.handleBtnClick.bind(this);
-    this.display = this.display.bind(this);
-  }
+const Calculator = () => {
+  const [total, useTotal] = useState(null);
+  const [next, useNext] = useState(null);
+  const [operation, useOperation] = useState(null);
+  const [error, useError] = useState(null);
 
-  handleBtnClick(buttonName) {
-    this.setState((state) => calculate(state, buttonName));
-  }
+  useEffect(() => {
+    useTotal(null);
+    useNext(null);
+    useOperation(null);
+  }, [error]);
 
-  display() {
-    const { total, next } = this.state;
+  const handleBtnClick = (buttonName) => {
+    if (error) useError(null);
+    try {
+      const calculatorData = calculate(
+        {
+          total, next, operation, error,
+        },
+        buttonName,
+      );
+      Object.entries(calculatorData).forEach(([key, value]) => {
+        switch (key) {
+          case 'total':
+            useTotal(value);
+            break;
+          case 'next':
+            useNext(value);
+            break;
+          default:
+            useOperation(value);
+        }
+      });
+    } catch (e) {
+      useError(e);
+    }
+  };
 
+  const display = () => {
+    if (error) return error.message;
     if (total) {
       if (next) return next;
       return total;
@@ -33,14 +53,12 @@ export default class Calculator extends React.Component {
       return next;
     }
     return '0';
-  }
-
-  render() {
-    return (
-      <div className="calculator">
-        <Screen value={this.display()} />
-        <CalculatorBtns handleBtnClick={this.handleBtnClick} />
-      </div>
-    );
-  }
-}
+  };
+  return (
+    <div className="calculator">
+      <Screen value={display()} isError={!!error} />
+      <CalculatorBtns handleBtnClick={handleBtnClick} />
+    </div>
+  );
+};
+export default Calculator;
