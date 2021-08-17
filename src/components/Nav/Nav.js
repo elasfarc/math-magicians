@@ -5,7 +5,11 @@ import './Nav.css';
 const Nav = () => {
   return (
     <nav className="navbar flex-row">
-      <h1 className="most-left">Math Magicians</h1>
+      <h1 className="most-left">
+        <Link className="logo" to="/">
+          Math Magicians
+        </Link>
+      </h1>
       <ul className="most-right">
         <li className="nav-link">
           <Link to="/">Home</Link>
