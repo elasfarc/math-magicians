@@ -1,0 +1,10 @@
+.navbar {
+  _background-color: yellow;
+  justify-content: space-between;
+  padding: 2em;
+  margin-bottom: 4em;
+}
+
+.most-left {
+  font-size: 2.5rem;
+}

@@ -1,6 +1,6 @@
 .calculator {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 3px solid black;
