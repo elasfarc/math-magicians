@@ -1,0 +1,15 @@
+.home {
+  text-align: left;
+  padding: 0 2em 2em 2em;
+
+  max-width: 800px;
+  font-size: 2rem;
+}
+
+.home--heading {
+  margin-bottom: 3rem;
+}
+
+.home--par {
+  margin-bottom: 2em;
+}

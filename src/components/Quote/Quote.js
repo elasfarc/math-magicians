@@ -9,6 +9,8 @@ const Quote = () => {
     top: '40%',
     left: '50%',
     transform: 'translate(-50%,-50%)',
+    backgroundColor: 'rgb(32, 41, 68)',
+    color: 'rgb(255, 255, 255)',
   };
   const quoteStyles = {};
   return (
