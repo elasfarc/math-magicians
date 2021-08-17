@@ -9,6 +9,7 @@
   font-size: 5.5rem;
   font-family: 'Indie Flower', cursive;
 }
+
 .logo {
   color: yellow !important;
 }
@@ -30,6 +31,7 @@ a:link {
   color: white;
   text-decoration: none;
 }
+
 a:visited {
   color: white;
 }

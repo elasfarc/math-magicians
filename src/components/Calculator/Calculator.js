@@ -26,7 +26,7 @@ const Calculator = () => {
           operation,
           error,
         },
-        buttonName
+        buttonName,
       );
       Object.entries(calculatorData).forEach(([key, value]) => {
         switch (key) {

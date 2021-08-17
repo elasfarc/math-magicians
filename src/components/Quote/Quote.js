@@ -12,7 +12,7 @@ const Quote = () => {
     backgroundColor: 'rgb(32, 41, 68)',
     color: 'rgb(255, 255, 255)',
   };
-  const quoteStyles = {};
+
   return (
     <div style={quoteContainerStyles}>
       <p>
