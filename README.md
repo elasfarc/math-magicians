@@ -58,6 +58,9 @@ Feel free to check the [issues page](../../issues/).
 
 Give a ⭐️ if you like this project!
 
+## Acknowledgments
+Kent C. Dodds
+
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.

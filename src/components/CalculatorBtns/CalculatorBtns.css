@@ -1,13 +1,13 @@
 .btn {
   width: 10rem;
   height: 8rem;
-  background: inherit;
+  background-color: white;
   border: 0.25px solid #c1c5be8a;
   font-size: 2rem;
 }
 
 .btn:hover {
-  background: #c1c5be46;
+  background-color: #c1c5be;
   border: none;
 }
 
@@ -26,6 +26,7 @@
   margin-right: auto;
   border-bottom: none;
   border-left: none;
+  border-radius: 0 0 0 20px;
 }
 
 .operation-btn {

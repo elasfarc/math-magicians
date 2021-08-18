@@ -21,7 +21,10 @@ const Calculator = () => {
     try {
       const calculatorData = calculate(
         {
-          total, next, operation, error,
+          total,
+          next,
+          operation,
+          error,
         },
         buttonName,
       );
@@ -55,9 +58,12 @@ const Calculator = () => {
     return '0';
   };
   return (
-    <div className="calculator">
-      <Screen value={display()} isError={!!error} />
-      <CalculatorBtns handleBtnClick={handleBtnClick} />
+    <div className="calc-container">
+      <h2 className="calc-heading">lets do some math</h2>
+      <div className="calculator">
+        <Screen value={display()} isError={!!error} />
+        <CalculatorBtns handleBtnClick={handleBtnClick} />
+      </div>
     </div>
   );
 };

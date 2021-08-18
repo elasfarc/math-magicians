@@ -1,10 +1,32 @@
 .calculator {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 60%;
+  left: 75%;
   transform: translate(-50%, -50%);
   border: 3px solid black;
   border-radius: 25px;
   width: calc(40rem + 6px);
   height: calc(50rem + 6px);
+}
+
+/*
+.calc-container {
+  _display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70vh;
+  max-width: 800px;
+} */
+
+.calc-heading {
+  color: white;
+  text-align: left;
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  border-radius: 60px 20px 60px 80px;
+  border: 2px solid white;
+  padding: 2em;
+  letter-spacing: 2px;
 }
